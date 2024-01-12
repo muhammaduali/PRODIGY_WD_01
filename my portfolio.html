@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        style.css * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+        
+        body {}
+        
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #f3f5f8;
+        }
+        
+        nav {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            height: 80px;
+            line-height: 80px;
+            z-index: 111;
+        }
+        
+        .logo {
+            display: flex;
+            font-size: 40px;
+            font-weight: 800;
+            color: #3d535f;
+            letter-spacing: 3px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        
+        b {
+            font-size: 70px;
+            color: #7f00ff;
+        }
+        
+        .navItem {
+            display: flex;
+        }
+        
+        .navItem li {
+            list-style: none;
+            margin: 0 15px;
+        }
+        
+        .navItem li a {
+            font-size: 25px;
+            color: #3d535f;
+            letter-spacing: 3px;
+            padding: 20px;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+        
+        .navItem li a:hover,
+        .links a:hover {
+            color: #7f00ff;
+        }
+        
+        .links a {
+            font-size: 30px;
+            color: #3d535f;
+            margin: 25px 10px;
+        }
+        
+        .wrapper {
+            display: flex;
+            width: 100%;
+            margin-top: 50px;
+            height: calc(100vh - 80px);
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 10%;
+            overflow: hidden;
+        }
+        
+        .wrapper::before {
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+            height: 600px;
+            width: 600px;
+            left: -12%;
+            top: 40%;
+            background: linear-gradient(45deg, #7f00ff, pink);
+            animation: object1 6s linear infinite;
+        }
+        
+        .wrapper::after {
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            left: 35%;
+            top: 12%;
+            background: linear-gradient(45deg, #7f00ff, pink);
+            animation: object2 6s linear infinite;
+        }
+        
+        .cols {
+            width: 50%;
+        }
+        
+        .cols0 {
+            z-index: 1;
+        }
+        
+        .topline {
+            display: block;
+            position: relative;
+            font-size: 25px;
+            letter-spacing: 5px;
+            color: #3d535f;
+        }
+        
+        .topline::after {
+            position: absolute;
+            content: '';
+            height: 4px;
+            width: 45px;
+            bottom: 10px;
+            background-color: #7f00ff;
+        }
+        
+        h1 {
+            display: block;
+            font-size: 5em;
+            font-weight: 900;
+            color: #3d535f;
+        }
+        
+        .multiText {
+            color: #7f00ff;
+            text-transform: capitalize;
+        }
+        
+        p {
+            display: block;
+            width: 90%;
+            font-size: 1.2em;
+            color: #3d535f;
+        }
+        
+        .btns {
+            width: 100%;
+            position: relative;
+            left: 150px;
+        }
+        
+        .btns a {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        button {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            font-size: 25px;
+            font-weight: 400;
+            color: #fff;
+            background-color: #3d535f;
+            padding: 8px 14px;
+            margin: 40px 5px;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            box-shadow: 0 15px 10px rgba(0, 0, 0, 0.59);
+        }
+        
+        button:hover {
+            background-color: #7f00ff;
+        }
+        
+        .imgbox {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .imgbox img {
+            position: relative;
+            height: 120%;
+            width: calc(130% - 80px);
+            top: 10px;
+            right: 50px;
+            animation: animateUser 4s linear infinite;
+        }
+        
+        @keyframes animateUser {
+            50% {
+                right: 30px;
+                top: -20px;
+            }
+        }
+        
+        .imgbox #splash {
+            position: absolute;
+            top: -6%;
+            left: -5%;
+            transform: translate((-50%, -50%) rotate(-35deg));
+            width: 110%;
+            filter: saturate(200%);
+            animation: animate 4s linear infinite;
+        }
+        
+        @keyframes animate {
+            50% {
+                right: 39px;
+                top: -20px;
+            }
+        }
+        
+        @keyframes object1 {
+            50% {
+                right: -13%;
+                top: 20%;
+            }
+        }
+        
+        @keyframes object2 {
+            50% {
+                right: 35%;
+                top: 19%;
+            }
+        }
+        
+        .about {
+            position: absolute;
+            z-index: 15;
+            width: 80%;
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 100px;
+            justify-content: center;
+            display: flex;
+        }
+        
+        .rdm {
+            left: 10px;
+        }
+        
+        .about-img img {
+            width: 30vw;
+            transform: scaleX(-1);
+        }
+        
+        .about-content {
+            padding-top: 100px;
+        }
+        /*-------skill-------*/
+        
+        .skill {
+            margin-top: 700px;
+            text-align: center;
+            padding-left: 150px;
+            width: 90%;
+            padding-top: 50px;
+        }
+        
+        .row {
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .course-col {
+            flex-basis: 31%;
+            background: #ccd0f3;
+            border-radius: 10px;
+            margin-bottom: 6%;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+        
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        .course-col:hover {
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.363);
+            cursor: pointer;
+        }
+        
+        .comment-box {
+            border: 1px solid #ccc;
+            margin: 50px 0;
+            padding: 10px 20px;
+        }
+        
+        .comment-box {
+            text-align: left;
+        }
+        
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            background: #f0f0f0;
+        }
+        
+        .comment-form button {
+            margin: 10px 0;
+        }
+        
+        .blog-content h1 {
+            padding-left: 40%;
+        }
+        
+        .blog-content p {
+            padding: 100px;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container" id="myhome">
+        <nav>
+            <div class="logo">Portfolio <b>.</b></div>
+            <ul class="navItem">
+                <li>
+                    <a href="#myhome">Home</a>
+                    <a href="#myabout">About</a>
+                    <a href="#myskill">Skill</a>
+                    <a href="#feed">Blog</a>
+                </li>
+            </ul>
+            <div class="links">
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+            </div>
+        </nav>
+        <div class="wrapper">
+            <div class="cols cols0">
+                <span class="topline">Hello,<br> I am Muhammadu Ali</span>
+                <h1>And I'm a <br><span class="multiText"></span></h1>
+                <p>Self-motivated and hardworking fresher seeking for an opportunity to work in a challenging environment to prove my skills and utilize my knowledge & intelligence in the growth of the organization.</p>
+                <div class="btns">
+                    <button><a href="cv/TATHAGATA DASGUPTA(CV).pdf" download="Resume" >Download cv</a> <i class="fa fa-download"></i></button>
+                    <Button>Hire Me</Button>
+                </div>
+            </div>
+            <div class="cols cols1">
+                <div class="imgbox">
+                    <img src="C:\Users\DELL\Downloads\img2 (1).png" id="splash" alt="">
+                    <img src="C:\Users\DELL\Downloads\WhatsApp_Image_2024-01-12_at_22.10.04-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="myabout">
+        <div class="about-img">
+            <img src="C:\Users\DELL\Downloads\IMG_20240110_192315.jpg" alt="">
+        </div>
+        <div class="about-content">
+            <h1>About <span class="multiText">Me</span></h1>
+            <h3>Frontend Developer</h3>
+            <p>I am Muhammadu Ali from chennai.Currently pusuing my B.TECH(IT) degree at the St.Joseph's college of engineering.I am an UI/UX designer and an Web developer.</p>
+            <div class="btns rdm"><button> Read More</button></div>
+        </div>
+
+
+
+    </section>
+
+    <section class="skill" id="myskill">
+        <h1 class="title">My <span class="multiText">Skill</span> </h1>
+        <div class="row">
+            <div class="course-col">
+                <h3>WEB DEVELOPER <span class="multiText"><i class="fa fa-code"></i></span></h3>
+                <p>As a skilled developer proficient in HTML, CSS, and JavaScript, I possess the expertise to craft dynamic and visually engaging web experiences. My knowledge of HTML allows me to structure content effectively, ensuring clarity and accessibility.
+                    With CSS, I wield the power to style and design these web elements, creating visually appealing layouts and user interfaces that resonate with audiences.</p>
+            </div>
+            <div class="course-col">
+                <h3>DESIGNER <span class="multiText"><i class="fa fa-pen-ruler"></i></span></h3>
+                </h3>
+                <p>As a dedicated UI/UX designer well-versed in industry-standard tools such as Figma, Adobe Photoshop, Adobe XD, and Illustrator, I bring creativity and functionality together to craft seamless digital experiences. With Figma, I efficiently
+                    conceptualize and design user interfaces, fostering collaboration and creating interactive prototypes that facilitate a smooth design process.</p>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <section class="Blog" id="feed">
+        <div class="blog-content">
+            <h1>BLOG</h1>
+            <p>Bridging Creativity and Functionality: Meet Our Multifaceted UI/UX Designer and Web Developer, Muhammadu Ali In the ever-evolving digital landscape, the fusion of design and development expertise becomes the hallmark of innovation. Meet Muhammadu
+                Ali, a trailblazing professional who seamlessly marries the worlds of UI/UX design and web development, crafting immersive digital experiences that captivate and resonate. Embracing the Dual Role: With a unique skill set encompassing UI/UX
+                design and web development, Muhammadu Ali stands at the intersection of creativity and functionality. Armed with an array of tools including Figma, Adobe Photoshop, Adobe XD, Illustrator, HTML, CSS, and JavaScript, they navigate effortlessly
+                between designing captivating user interfaces and bringing them to life with interactive functionality. Design that Speaks Volumes: As a UI/UX designer, Muhammadu Ali's canvas is a playground of innovation. Figma, Adobe XD, Photoshop,
+                and Illustrator are their trusted companions, where they craft visually stunning interfaces, meticulously shaping user experiences. From wireframes to high-fidelity prototypes, every pixel resonates with a dedication to intuitive design
+                and user-centricity. Development Expertise Unleashed: Beyond design, Muhammadu Ali delves into the realm of web development, wielding HTML, CSS, and JavaScript as tools to breathe life into their creations. They understand the nuances
+                of code, leveraging it to create responsive, interactive, and seamless web experiences. Their websites aren’t just visually striking; they’re functional, intuitive, and optimized for diverse user interactions. Bridging the Gap for Exceptional
+                Experiences: What sets Muhammadu Ali apart is their ability to bridge the gap between design and development. By understanding the intricacies of both realms, they ensure that the final product is not just aesthetically pleasing but also
+                highly functional. Their designs seamlessly translate into responsive, user-friendly web applications, culminating in an unparalleled user experience. Crafting Tomorrow’s Digital Landscape: In a world where innovation is key, Muhammadu
+                Ali stands as a beacon of adaptability and creativity. Their mastery in UI/UX design and web development positions them as a visionary in crafting the digital landscape of tomorrow. Their passion for creating memorable user experiences
+                drives them to continually push boundaries and set new benchmarks in the industry. Conclusion: Muhammadu Ali embodies the synergy of creativity and technical prowess, bringing to life digital experiences that transcend the ordinary. Their
+                duality as a UI/UX designer and web developer fuels their passion for innovation, setting them apart as a force to be reckoned with in the dynamic realm of digital design and development.
+
+            </p>
+            <div class="comment-box">
+                <h3>Leave a Feedback</h3>
+                <form class="comment-form">
+                    <input type="text" placeholder="Enter Name">
+                    <input type="email" name="" id="" placeholder="Enter Email">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Your comment"></textarea>
+                    <button type="submit" class="hero red-btn">POST COMMENT</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <script>
+        var typingEffect = new Typed(".multiText", {
+            strings: ["coder", "Developer", "designer"],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 1500
+        })
+    </script>
+</body>
+
+</html>
